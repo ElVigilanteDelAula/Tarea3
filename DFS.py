@@ -1,7 +1,13 @@
+
+import timeit
+
+
+
 pesoObjeto = [3, 4, 5, 2, 1]
 beneficioObjeto = [4, 5, 6, 3, 2]
 capacidadMochila = 10
 
+start = timeit.default_timer()
 def evaluate(solution):
     total_weight = sum(pesoObjeto[i] for i in range(len(solution)) if solution[i])
     if total_weight > capacidadMochila:
@@ -28,3 +34,6 @@ dfs(0, 0, 0, [0]*len(pesoObjeto))
 print("Solución encontrada:")
 print(best_solution)
 print("Valor total de los elementos seleccionados:", best_value)
+stop = timeit.default_timer()
+
+print('Time: ', stop - start)

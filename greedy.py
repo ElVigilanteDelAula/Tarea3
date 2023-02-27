@@ -1,8 +1,10 @@
+import timeit
 
 pesoObjeto = [3, 4, 5, 2, 1, 3]
 beneficioObjeto = [4, 5, 5, 3, 2, 4]
 capacidadMochila = 17
 
+start = timeit.default_timer()
 def valorOptimo(solucion):
     pesoTotalObjetos = sum(pesoObjeto[i] for i in range(len(solucion)) if solucion[i])
     if pesoTotalObjetos > capacidadMochila:
@@ -33,3 +35,5 @@ solucion = busquedaInformada()
 print("Solución encontrada:")
 print(solucion)
 print("Valor total de los elementos seleccionados:", valorOptimo(solucion))
+stop = timeit.default_timer()
+print('Time: ', stop - start)
